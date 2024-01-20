@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>社交人物卡片</title>
+  <link href="css/iconfont.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <style>
+      body {
+        background-color: #f7f7f7;
+        font-family: Arial, sans-serif;
+      }
+      
+      .card {
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin: 50px auto;
+        max-width: 500px;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        
+      }
+      
+      .image {
+        height: 250px;
+        object-fit: cover;
+        width: 100%;
+      }
+      
+      .name {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 10px 10px;
+      }
+      
+      .title {
+        font-size: 16px;
+        font-weight: bold;
+        margin: 10px 10px;
+      }
+      
+      .description {
+        font-size: 16px;
+        line-height: 1.5;
+        margin: 10px 0;
+        padding: 0 20px;
+        text-align: justify;
+      }
+      
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+      }
+      
+      .social-icon {
+        display: inline-block;
+        height: 40px;
+        margin: 0 10px;
+        width: 40px;
+        transition: transform 0.3s ease;
+        font-size: 30px;
+      }
+      
+      .social-icon:hover {
+        transform: scale(1.2);
+      }
+      
+
+    </style>
+  <body>
+    <div class="card">
+      <img class="image" src="images/1-5_governance_768.jpg" alt="头像">
+      <div class="name">张三</div>
+      <div class="title">高级工程师</div>
+      <div class="description">
+        张三，男，28岁，身高175cm，体重70kg，出生于北京市。毕业于清华大学计算机科学专业，现在在一家互联网公司担任高级工程师。擅长Java编程和大数据处理。
+      </div>
+      <div class="social-icons">
+        <span class="iconfont icon-linkedin social-icon"></span>
+        <span class="iconfont icon-twitter social-icon"></span>
+        <span class="iconfont icon-facebook-fill social-icon"></span>
+      </div>
+    </div>
+</body>
+</html>
