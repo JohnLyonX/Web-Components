@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
+</head>
+<style>
+    .content{
+    margin: 35px auto;
+    padding: 20px 15% !important;
+}
+.developer_banner_warp{
+    color: white;
+}
+    .developer_banner_title{
+    margin-top: 35px;
+    margin-left: 25px;
+}
+.developer_banner_title2{
+    transition: .5s ease;
+    opacity: 0;
+    transform: translateX(-50px);
+}
+.developers_active{
+    transform: translateX(0);
+    opacity: 1;
+}
+.developer_banner_title:before{
+    content: '';
+    display: flex;
+    position: absolute;
+    left: 15%;
+    height: 85px;
+    width: 10px;
+    background: #3f68b5;
+    margin: 10px 0;
+}
+.developer_banner_title2{
+    margin-left: 25px;
+}
+.developer_banner_warp{
+    margin-top: 60px;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+.developer_banner{
+    width: 300%;
+    height: auto;
+    display: flex;
+
+}
+.developer_banner_content{
+    width: 100%;
+    height: auto;
+    display: flex;
+    transition: .3s ease;
+    margin: 0 auto;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+.developer_banner_img{
+    width: 100%;
+    height: 100%;
+}
+.developer_banner_introduce{
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(135deg , #6858f6 60%, #b53cf5);
+    padding-top: 10%;
+    border-radius: 0;
+}
+.developer_banner_introduce_name{
+    margin-top: 5%;
+}
+.developer_banner_spacing{
+    padding: 0 !important;
+
+}
+.banner_btn{
+    margin-top: 20px;
+    width:100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+}
+.banner_next,.banner_page,.banner_return{
+    color: black;
+    cursor: pointer;
+    user-select: none;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0 10px;
+}
+</style>
+<body>
+    <div class="content">
+        <div class="developer_banner_warp">
+                <div class="developer_banner">
+                    <div class="developer_banner_content row">
+                        <div class="col-lg-4 developer_banner_spacing">
+                            <img src="images/1-5_governance_768.jpg" alt="" class="developer_banner_img">
+                        </div>
+                        <div class="col-lg-8 developer_banner_spacing">
+                            <div class="card developer_banner_introduce">
+                                <div class="card-body">
+                                    <h4 class="card-text developer_banner_introduce_text">A very good developer is the chief technology officer of the campus front-end developer competition. He is the leader of the Hello World team.</h4>
+                                    <h3 class="card-title developer_banner_introduce_name">Name</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="developer_banner_content row">
+                        <div class="col-lg-4 developer_banner_spacing">
+                            <img src="images/1-5_governance_768.jpg" alt="" class="developer_banner_img">
+                        </div>
+                        <div class="col-lg-8 developer_banner_spacing">
+                            <div class="card developer_banner_introduce">
+                                <div class="card-body">
+                                    <h4 class="card-text developer_banner_introduce_text">A very good developer is the chief technology officer of the campus front-end developer competition. He is the leader of the Hello World team.</h4>
+                                    <h3 class="card-title developer_banner_introduce_name">Name</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="developer_banner_content row">
+                        <div class="col-lg-4 developer_banner_spacing">
+                            <img src="images/1-5_governance_768.jpg" alt="" class="developer_banner_img">
+                        </div>
+                        <div class="col-lg-8 developer_banner_spacing">
+                            <div class="card developer_banner_introduce">
+                                <div class="card-body">
+                                    <h4 class="card-text developer_banner_introduce_text">A very good developer is the chief technology officer of the campus front-end developer competition. He is the leader of the Hello World team.</h4>
+                                    <h3 class="card-title developer_banner_introduce_name">Name</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+        </div>
+        <div class="banner_btn">
+            <div class="banner_return"> < </div>
+            <div class="banner_page">1 / 3 </div>
+            <div class="banner_next"> > </div>
+        </div>
+    
+</div>    
+<script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        // 轮播图
+        var BannerPage = 0;
+
+            $('.banner_next').click(function(){
+                BannerPage++;
+                if(BannerPage == 1){
+                    $('.developer_banner_content').css('transform', 'translateX(-100%)');
+                    $('.banner_page').html('2 / 3');
+                }
+                if (BannerPage >= 2){
+                    $('.developer_banner_content').css('transform', 'translateX(-200%)');
+                    $('.banner_page').html('3 / 3');
+                    BannerPage = 2;
+                }
+            })
+
+            $('.banner_return').click(function(){
+                BannerPage--;
+                if(BannerPage == 1){
+                    $('.developer_banner_content').css('transform', 'translateX(-100%)');
+                    $('.banner_page').html('2 / 3');
+                }
+                if(BannerPage <= 0){
+                    $('.developer_banner_content').css('transform', 'translateX(0)');
+                    $('.banner_page').html('1 / 3');
+                    BannerPage = 0;
+                }
+
+             })
+    </script>
+</body>
+</html>
