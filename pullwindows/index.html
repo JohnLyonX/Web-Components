@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PullWindows</title>
+</head>
+<style>
+    body, html {
+        margin: 0;
+        width: 100%;
+    }
+
+    .windowsContainer {
+        width: 400px;
+        height: auto;
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .boxHeader {
+        width: 100%;
+        height: 25px;
+        background-color: #22252a;
+    }
+
+    .boxHeader ul {
+        width: 13%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 !important;
+        padding-left: 10px;
+    }
+
+    .boxHeader ul li {
+        list-style-type: none;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+    }
+
+    .boxHeader ul li:nth-child(1) {
+        background-color: #ff3526;
+    }
+
+    .boxHeader ul li:nth-child(2) {
+        background-color: #ffbb2f;
+    }
+
+    .boxHeader ul li:nth-child(3) {
+        background-color: #4dd03c;
+    }
+
+    .boxContainer {
+        width: 100%;
+        height: auto;
+        padding: 10px 20px;
+        background-color: #31353d;
+    }
+    .card{
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        border-radius: 1rem;
+        overflow: hidden;
+        color: white;
+    }
+    .cardImg{
+        width: 40%;
+        height: 100%;
+    }
+    .cardImg img{
+        width: 100%;
+        border-radius: 1rem;
+    }
+    .cardContent{
+        width: 60%;
+        height: 100%;
+        padding-left: 10px;
+    }
+
+    footer{
+        width: 100%;
+        height: 100px;
+        padding-top: 35px;
+        text-align: center;
+        background: #313a46;
+        color: white;
+        position: fixed;
+        bottom: 0;
+    }
+</style>
+<body>
+<div class="windowsContainer">
+    <div class="boxHeader" onmousedown="startDrag(event)">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="boxContainer">
+        <div class="card">
+            <div class="cardImg">
+                <img src="IMG_0364.JPG">
+            </div>
+            <div class="cardContent">
+                <h4>Name: Po John</h4>
+                <p>Sex: Man</p>
+                <p>Post: CEO</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div>教学所用 禁止二次开源,违反者踢出培优室</div>
+    Copyright &copy; Po John 2023.
+</footer>
+<script>
+
+    var initialX = 0;
+    var initialY = 0;
+    var offsetX = 0;
+    var offsetY = 0;
+
+    function startDrag(e) {
+        e.preventDefault();
+
+        // 获取boxHeader元素和整个窗口容器
+        var boxHeader = document.querySelector('.boxHeader');
+        var windowsContainer = document.querySelector('.windowsContainer');
+
+        // 记录当前窗口位置和鼠标位置
+        initialX = e.clientX;
+        initialY = e.clientY;
+        offsetX = windowsContainer.offsetLeft;
+        offsetY = windowsContainer.offsetTop;
+
+        // 添加mousemove和mouseup事件监听器
+        document.addEventListener('mousemove', dragWindow);
+        document.addEventListener('mouseup', stopDrag);
+    }
+
+    function dragWindow(e) {
+        // 计算窗口新的位置
+        var newX = offsetX + e.clientX - initialX;
+        var newY = offsetY + e.clientY - initialY;
+
+        // 设置窗口的新位置
+        var windowsContainer = document.querySelector('.windowsContainer');
+        windowsContainer.style.left = newX + 'px';
+        windowsContainer.style.top = newY + 'px';
+    }
+
+    function stopDrag() {
+        // 移除mousemove和mouseup事件监听器
+        document.removeEventListener('mousemove', dragWindow);
+        document.removeEventListener('mouseup', stopDrag);
+    }
+</script>
+</body>
+</html>
